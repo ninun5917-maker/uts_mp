@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'auth_provider.dart';
-import 'login_page.dart';
-import 'forgot_password_page.dart'; // Tambahkan import ini
-import 'dashboard_page.dart'; // Tambahkan import ini
+import 'models/auth_provider.dart'; // Sesuaikan folder
+import 'screens/login_page.dart';
+import 'screens/forgot_password_page.dart';
+import 'screens/dashboard_page.dart';
 
 void main() {
   runApp(

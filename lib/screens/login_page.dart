@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'auth_provider.dart';
+import '../models/auth_provider.dart'; // '../' artinya keluar folder screens dulu baru masuk ke models
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
