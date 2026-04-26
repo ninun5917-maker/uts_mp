@@ -22,9 +22,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'UTS MP',
       debugShowCheckedModeBanner: false,
-      // Hapus baris androidOverscrollIndicator yang merah tadi
       theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
-      // TAMBAHKAN BAGIAN INI UNTUK MEMATIKAN EFEK MELAR GLOBAL
+      // Matikan effext melar
       builder: (context, child) {
         return ScrollConfiguration(
           behavior: const ScrollBehavior().copyWith(overscroll: false),
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const LoginPage(),
         '/dashboard': (context) => const DashboardPage(),
         '/forgot_password': (context) =>
-            const ForgotPasswordPage(), // Pastikan pakai _ bukan -
+            const ForgotPasswordPage(),
       },
     );
   }

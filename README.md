@@ -1,17 +1,64 @@
-# uts_mp
+# UTS Praktikum Mobile Programming - Flutter
 
-A new Flutter project.
+Aplikasi Flutter sederhana yang mengimplementasikan sistem Login, Lupa Password, dan Dashboard sebagai bagian dari Ujian Tengah Semester (UTS).
 
-## Getting Started
+## 👤 Identitas Mahasiswa
 
-This project is a starting point for a Flutter application.
+- **Nama:** Anak Agung Gede Lanang Agung Biwangsa Adhi
+- **NIM:** 2401010128
+- **Kelas:** N
+- **Kampus:** INSTIKI
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## 🚀 Fitur Utama
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Aplikasi ini memiliki 3 halaman utama dengan fitur sebagai berikut:
+
+### 1. Halaman Login
+
+- **Validasi Client-side:** Menggunakan `GlobalKey<FormState>` dan Regex untuk validasi Email & Password.
+- **Toggle Visibility:** Menampilkan atau menyembunyikan password (ikon mata).
+- **Loading State:** Menampilkan `CircularProgressIndicator` saat proses login berlangsung.
+- **Hardcoded Credential:** Login menggunakan `admin@test.com` / `Admin123`.
+
+### 2. Halaman Lupa Password
+
+- Input email dengan validasi format.
+- Feedback visual menggunakan **SnackBar** setelah pengiriman sukses.
+- Navigasi kembali menggunakan `Navigator.pop`.
+
+### 3. Dashboard
+
+- Menampilkan data user dari **State Management (Provider)**.
+- **Advanced Widget:** Implementasi `ListView.builder` untuk daftar berita/item.
+- **Card Styling:** Penggunaan Card dengan shadow dan rounded corners.
+- **Secure Logout:** Menggunakan `Navigator.pushNamedAndRemoveUntil`.
+
+---
+
+## 🛠️ Spesifikasi Teknis
+
+- **State Management:** Provider & setState.
+- **Navigation:** Named Routes (Navigator 1.0).
+- **Struktur Folder:**
+  - `lib/models/`: Pengelolaan state/data (AuthProvider).
+  - `lib/screens/`: Halaman aplikasi (UI).
+- **Struktur UI:** Scaffold, AppBar, Column, Row, Stack, Expanded, Padding, SizedBox, SafeArea.
+
+---
+
+## 📸 Screenshots
+
+|       Login Screen       |        Lupa Password         |            Dashboard             |
+| :----------------------: | :--------------------------: | :------------------------------: |
+| ![Login](login_page.png) | ![Forgot](lupa_password.png) | ![Dashboard](dashboard_page.png) |
+
+---
+
+## 🏃 Cara Menjalankan Projek
+
+1. **Clone repositori ini:**
+   ```bash
+   git clone [https://github.com/username_kamu/uts_mp.git](https://github.com/username_kamu/uts_mp.git)
+   ```
