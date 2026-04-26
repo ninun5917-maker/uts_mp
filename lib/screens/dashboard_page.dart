@@ -7,10 +7,10 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Mengambil data user dari Provider
+    // ngambil data user dari Provider
     final userEmail = context.watch<AuthProvider>().email;
 
-    // Data dummy untuk ListView.builder (Minimal 10 item)
+    // Data dummy untuk ListView.builder
     final List<String> items = List.generate(
       10,
       (index) => "Berita Teknologi ${index + 1}",
@@ -19,13 +19,13 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Dashboard Utama"),
-        // Tombol Logout (Wajib)
+        // Tombol Logout
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
               context.read<AuthProvider>().logout();
-              // Navigator.pushAndRemoveUntil (Wajib: menghapus semua riwayat halaman)
+              // Navigator.pushAndRemoveUntil
               Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
             },
           ),
@@ -34,7 +34,7 @@ class DashboardPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Widget Card dengan styling (Wajib)
+          // Widget Card
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Card(
@@ -78,9 +78,10 @@ class DashboardPage extends StatelessWidget {
             ),
           ),
 
-          // Widget Advanced: ListView.builder (Wajib)
+          // Widget Advanced ListView.builder
           Expanded(
             child: ListView.builder(
+              physics: const ClampingScrollPhysics(),
               padding: const EdgeInsets.all(16),
               itemCount: items.length,
               itemBuilder: (context, index) {
@@ -91,9 +92,7 @@ class DashboardPage extends StatelessWidget {
                     title: Text(items[index]),
                     subtitle: const Text("Klik untuk membaca selengkapnya..."),
                     trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                    onTap: () {
-                      // Aksi dummy saat item diklik
-                    },
+                    onTap: () {},
                   ),
                 );
               },
@@ -101,7 +100,7 @@ class DashboardPage extends StatelessWidget {
           ),
         ],
       ),
-      // Optional: Bottom Navigation Bar (Nilai Tambah)
+      // Bottom Navigation Bar
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),

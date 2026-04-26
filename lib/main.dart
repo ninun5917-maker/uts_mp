@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'models/auth_provider.dart'; // Sesuaikan folder
+import 'models/auth_provider.dart';
 import 'screens/login_page.dart';
-import 'screens/forgot_password_page.dart';
 import 'screens/dashboard_page.dart';
 
 void main() {
@@ -20,17 +19,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'UTS MP',
       debugShowCheckedModeBanner: false,
-      title: 'UTS Mobile Programming',
-      theme: ThemeData(primarySwatch: Colors.blue),
-
-      // Menggunakan initialRoute karena kita beralih ke pushNamed
+      // Hapus baris androidOverscrollIndicator yang merah tadi
+      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
+      // TAMBAHKAN BAGIAN INI UNTUK MEMATIKAN EFEK MELAR GLOBAL
+      builder: (context, child) {
+        return ScrollConfiguration(
+          behavior: const ScrollBehavior().copyWith(overscroll: false),
+          child: child!,
+        );
+      },
       initialRoute: '/',
-
-      // Daftarkan semua halaman di sini agar bisa dipanggil dengan Navigator.pushNamed
       routes: {
         '/': (context) => const LoginPage(),
-        '/forgot_password': (context) => const ForgotPasswordPage(),
         '/dashboard': (context) => const DashboardPage(),
       },
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../models/auth_provider.dart'; // '../' artinya keluar folder screens dulu baru masuk ke models
+import '../models/auth_provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  // State tambahan sesuai instruksi wajib:
+  // State wajib:
   bool _isLoading = false;
   bool _isPasswordVisible = false;
 
@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
       // Simulasi proses network (mock)
       await Future.delayed(const Duration(seconds: 2));
 
-      // Credential sesuai instruksi: admin@test.com / Admin123
+      // Credential admin@test.com / Admin123
       if (_emailController.text == "admin@test.com" &&
           _passwordController.text == "Admin123") {
         if (!mounted) return;

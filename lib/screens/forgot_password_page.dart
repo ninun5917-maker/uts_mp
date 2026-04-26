@@ -11,7 +11,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
 
-  // State untuk Loading sesuai instruksi
+  // State untuk Loading
   bool _isLoading = false;
 
   void _sendResetLink() async {
@@ -23,7 +23,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
 
       setState(() => _isLoading = false);
 
-      // Feedback visual menggunakan Snackbar
+      // Feedback visual
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
