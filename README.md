@@ -7,7 +7,6 @@ Aplikasi Flutter sederhana yang mengimplementasikan sistem Login, Lupa Password,
 - **Nama:** Anak Agung Gede Lanang Agung Biwangsa Adhi
 - **NIM:** 2401010128
 - **Kelas:** N
-- **Kampus:** INSTIKI
 
 ---
 
@@ -58,7 +57,6 @@ Aplikasi ini memiliki 3 halaman utama dengan fitur sebagai berikut:
 
 ## 🏃 Cara Menjalankan Projek
 
-1. **Clone repositori ini:**
-   ```bash
-   git clone [https://github.com/ninun5917-maker/uts_mp.git](https://github.com/ninun5917-maker/uts_mp.git)
-   ```
+1.  ```bash
+    git clone [https://github.com/ninun5917-maker/uts_mp.git](https://github.com/ninun5917-maker/uts_mp.git)
+    ```
