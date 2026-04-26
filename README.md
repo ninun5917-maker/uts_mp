@@ -60,5 +60,5 @@ Aplikasi ini memiliki 3 halaman utama dengan fitur sebagai berikut:
 
 1. **Clone repositori ini:**
    ```bash
-   git clone [https://github.com/username_kamu/uts_mp.git](https://github.com/username_kamu/uts_mp.git)
+   git clone [https://github.com/ninun5917-maker/uts_mp.git](https://github.com/ninun5917-maker/uts_mp.git)
    ```
