@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'models/auth_provider.dart';
 import 'screens/login_page.dart';
 import 'screens/dashboard_page.dart';
+import 'screens/forgot_password_page.dart';
 
 void main() {
   runApp(
@@ -34,6 +35,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const LoginPage(),
         '/dashboard': (context) => const DashboardPage(),
+        '/forgot_password': (context) =>
+            const ForgotPasswordPage(), // Pastikan pakai _ bukan -
       },
     );
   }
