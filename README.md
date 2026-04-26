@@ -10,9 +10,17 @@ Aplikasi Flutter sederhana yang mengimplementasikan sistem Login, Lupa Password,
 
 ---
 
-## 🚀 Fitur Utama
+## 🌟 Daftar Fitur
 
-Aplikasi ini memiliki 3 halaman utama dengan fitur sebagai berikut:
+* **Login dengan Validasi Email & Password**: Menggunakan `FormState` untuk memastikan input tidak kosong dan sesuai format.
+* **Show/Hide Password**: Fitur toggle untuk menampilkan atau menyembunyikan karakter password.
+* **Loading Indicator saat Login**: Menampilkan `CircularProgressIndicator` untuk memberikan feedback visual saat proses autentikasi.
+* **Snackbar Feedback (Error & Sukses)**: Notifikasi instan di bagian bawah layar untuk memberi tahu status interaksi user.
+* **Lupa Password dengan Validasi Email**: Halaman khusus untuk pemulihan akun dengan pengecekan format email.
+* **Dashboard Menampilkan Data User**: Menampilkan informasi email user yang sedang login menggunakan State Management.
+* **ListView dengan 10 Item**: Implementasi `ListView.builder` untuk menampilkan daftar data dummy secara dinamis.
+* **Logout Kembali ke Halaman Login**: Fungsi keluar yang menghapus riwayat navigasi (secure logout).
+
 
 ### 1. Halaman Login
 
