@@ -7,10 +7,10 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ngambil data user dari Provider
+    // Ngambil data email daru auth provider
     final userEmail = context.watch<AuthProvider>().email;
 
-    // Data dummy untuk ListView.builder
+    // 10 data dummy
     final List<String> items = List.generate(
       10,
       (index) => "Berita Teknologi ${index + 1}",
@@ -19,13 +19,14 @@ class DashboardPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Dashboard Utama"),
-        // Tombol Logout
+        // Tombol Logout pojok kanan atas
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
             onPressed: () {
+              // Ngambiil fungsi logout di provider
               context.read<AuthProvider>().logout();
-              // Navigator.pushAndRemoveUntil
+              // Balik ke login dan hapus riwayat dengan Navigator.pushAndRemoveUntil
               Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
             },
           ),
@@ -34,18 +35,19 @@ class DashboardPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Widget Card
+          // Widget Card untuk nampilin informasi user
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Card(
-              elevation: 4, // Shadow
+              elevation: 4, // Shadow pada kartu
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
-              ), // Rounded
+              ), // Rounded (sudut krtu jadi tumpul)
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children: [
+                    // Nampilin icon user bentuk llingkaran
                     const CircleAvatar(radius: 30, child: Icon(Icons.person)),
                     const SizedBox(width: 15),
                     Column(
@@ -55,6 +57,7 @@ class DashboardPage extends StatelessWidget {
                           "Selamat datang,",
                           style: TextStyle(fontSize: 14),
                         ),
+                        // Nampilin email yang di ambil dari provider
                         Text(
                           userEmail, // Menampilkan nama user dari state
                           style: const TextStyle(
@@ -70,6 +73,7 @@ class DashboardPage extends StatelessWidget {
             ),
           ),
 
+          // Judul untuk bagian berita
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: Text(
@@ -78,21 +82,29 @@ class DashboardPage extends StatelessWidget {
             ),
           ),
 
-          // Widget Advanced ListView.builder
+          // Daftar berita yang bisa di scroll
+          // Widget Advanced ListView.builder (Expanded digunakan agar ListView mengambil sisa ruang yang tersedia)
           Expanded(
             child: ListView.builder(
+              // Agar scroll ga ngasi effect melar
               physics: const ClampingScrollPhysics(),
               padding: const EdgeInsets.all(16),
-              itemCount: items.length,
+              itemCount:
+                  items.length, // Nentuin jumlah baris sesuai panjang data
               itemBuilder: (context, index) {
+                // Design untuk setiap baris di dalam daftar nya
                 return Card(
                   margin: const EdgeInsets.only(bottom: 10),
                   child: ListTile(
                     leading: const Icon(Icons.article, color: Colors.blue),
-                    title: Text(items[index]),
+                    title: Text(items[index]), // Judul berita dari data dumy
                     subtitle: const Text("Klik untuk membaca selengkapnya..."),
-                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                    trailing: const Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                    ), // Icon panah kanan
                     onTap: () {},
+                    // Effeck saat berita di tekan
                   ),
                 );
               },
